@@ -3,28 +3,28 @@
 
 
 .headerContainer {
-    // height: 285px;
     height: auto;
     width: 100%;
-    max-width: 95vw;
+    max-width: 80vw;
     margin: 2em auto;
-    padding: 24px 20px;
+    padding: v.$sizeXS v.$sizeXS;
     border-radius: v.$radiusLower;
     border: v.$border125;
     background-color: v.$white100;
     position: relative;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: v.$shadow-all2;
+    overflow-x: hidden;
 
     ul{
         display: flex;
         li{
-            margin: 1em;
+            margin: v.$sizeS v.$sizeL;
+            padding: v.$sizeXS;
             border-radius: v.$radiusMid;
-            padding: 1em;
             background-color: v.$gray200;
             text-decoration: none;
             list-style: none;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            box-shadow: v.$shadow-all2;
             font-size: v.$sizeM;
 
             &:hover{

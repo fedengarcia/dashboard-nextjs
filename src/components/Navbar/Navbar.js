@@ -8,6 +8,10 @@ const links = [{
     {
       label: 'Dashboard',
       route: '/dashboard'
+    },
+    {
+      label: 'Clients',
+      route: '/clients'
     }
   
   ]   
