@@ -26,6 +26,11 @@
             list-style: none;
             box-shadow: v.$shadow-all2;
             font-size: v.$sizeM;
+            & a{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
 
             &:hover{
                 cursor: pointer;

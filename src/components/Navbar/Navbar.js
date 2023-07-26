@@ -10,8 +10,8 @@ const links = [{
       route: '/dashboard'
     },
     {
-      label: 'Clients',
-      route: '/clients'
+      label: 'Post',
+      route: '/post'
     }
   
   ]   
@@ -24,7 +24,7 @@ export function Navbar () {
             {links?.map(({label,route}) => (
             <li key={route}>
                 {console.log(route)}
-                <Link href={route}>{label}</Link>
+                <Link href={route} >{label}</Link>
             </li>
             ))}
             
