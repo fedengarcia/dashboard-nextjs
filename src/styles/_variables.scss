@@ -1,0 +1,73 @@
+//Color palette
+ 
+$primary100: #5fbcbd; // 20% lighter
+$primary200: #43A1A2; // base // Main buttons
+$primary300: #358081; // 20% darker
+
+$secondary100: #347d99; // 20% lighter
+$secondary200: #214F61; // base // Header background
+$secondary300: #1a3f4d; // 20% darker
+ 
+$error: #E13144; 
+$warning: #F6AB0E; 
+$success: #4BA0A0; 
+$info: #5C9AD0; 
+
+$text: #222;
+ 
+$white: #FFF;
+$white100: #FAFAFA;
+$white200: #F5F5F5;
+
+$gray100: #EAEAEA; // Body background
+$gray200: #E0E0E0; // Sidebar background
+$gray300: #ADADAD; // Borders
+$gray400: #686868;
+
+$black: #000000;
+$black100: #111111;
+$black200: #222222; // Font
+$black300: #333333;
+
+// Font
+
+$family: 'Roboto', sans-serif;
+
+$sizeXS: 0.6em;
+$sizeS: 0.8em;
+$sizeM: 1em; // base
+$sizeL: 1.25em;
+$sizeXL: 1.5em;
+$sizeXXL: 2em;
+
+$weightXS: 200;
+$weightS: 300;
+$weightM: 400; // base
+$weightL: 500;
+$weightXL: 600;
+$weightXXL: 800;
+
+// Sizes
+
+$radiusLower: 0.28571429rem;
+$radiusMid: 0.5rem;
+
+// Borders and Shadows 
+
+$border125: 1px solid rgba(0, 0, 0, .125);
+$borderDDD: 1px solid #dddddd;
+
+$shadow-bottom: 0 2px 2px -2px rgb(0 0 0 / 34%);
+$shadow-all: 0px 1px 2px #818181;
+
+// $dark-theme: false;
+//
+// @if $dark-theme {
+//     $primary: darken($primary-color, 60%);
+// }
+
+// The export module that makes Sass variables accessible in JavaScript.... https://css-tricks.com/getting-javascript-to-talk-to-css-and-sass/
+:export {
+    primary200: $primary200;
+    // etc.
+  }

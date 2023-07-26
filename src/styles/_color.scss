@@ -1,0 +1,23 @@
+//Color palette
+
+// $dark-theme: false;
+ 
+$primary: #43A1A2; //Main buttons
+$secondary: #214F61; //Header background
+ 
+$error: #E13144; 
+$warning: #F6AB0E; 
+$success: #3fc362; 
+$info: #5C9AD0; 
+
+$text: #222;
+ 
+$white: #FFF;
+$gray100: #EEE; // Body background
+$gray200: #E0E0E0; // Sidebar background
+$gray300: #ADADAD; // Borders
+$black: #000;
+
+// @if $dark-theme {
+//     $primary: darken($primary-color, 60%);
+// }

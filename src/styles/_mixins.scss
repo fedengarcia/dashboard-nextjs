@@ -1,0 +1,317 @@
+@mixin breakpoint($point) {
+   @if $point == desktop {
+      @media (min-width: 70em) {
+         @content;
+      }
+   } @else if $point == laptop {
+      @media (min-width: 64em) {
+         @content;
+      }
+   } @else if $point == tablet {
+      @media (max-width: 50em) {
+         @content;
+      }
+   } @else if $point == phablet {
+      @media (min-width: 37.5em) {
+         @content;
+      }
+   } @else if $point == mobileonly {
+      @media (max-width: 37.5em) {
+         @content;
+      }
+   }
+}
+
+@mixin header-white-box {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: sticky;
+   z-index: 1;
+   top: 0em;
+   background-color: v.$white;
+   margin: 0 auto;
+   // width: 96%;
+   padding: 20px 2%;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+   box-shadow: v.$shadow-bottom;
+
+   h2 {
+      font-size: v.$sizeXXL;
+      font-weight: v.$weightL;
+      margin-bottom: 0em;
+   }
+
+   h3 {
+      font-size: v.$sizeXL;
+      font-weight: v.$weightL;
+      margin-bottom: 0em;
+   }
+}
+
+@mixin container-white {
+   background: v.$white;
+   border-radius: v.$radius;
+   border: v.$border125;
+   padding: 32px;
+   width: 96%;
+   margin: auto auto 18px auto;
+   height: fit-content !important;
+}
+
+@mixin input {
+   outline: none;
+   border: 1px solid v.$gray300;
+   border-radius: 6px;
+   padding: 8px;
+
+   &:focus-visible,
+   :active,
+   :focus {
+      border-color: v.$primary200;
+      box-shadow: v.$shadow-all;
+   }
+
+   // &[data-fullwidth] {
+   //     width: 100%;
+   // }
+
+   // &[data-readonly='true'] {
+   //     pointer-events: none;
+   //     border: unset;
+   //     border-radius: 0;
+   //     background-color: transparent;
+   //     color: black;
+   //     border-bottom: 1px solid $gray3;
+   // }
+}
+
+@mixin button {
+   border: 2px solid v.$primary200;
+   color: v.$white;
+   background: v.$primary200;
+   box-shadow: inset 0 0 0 1px transparent, inset 0 0 0 0 rgb(34 36 38 / 15%);
+   display: inline-block;
+   min-height: 1em;
+   border: none;
+   vertical-align: baseline;
+   padding: 0.78571429em 1.5em;
+   font-family: v.$family;
+   font-weight: v.$weightXL;
+   font-size: v.$sizeM;
+   line-height: 1em;
+   font-style: normal;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 0.28571429rem;
+   -webkit-user-select: none;
+   transition: all 0.1s ease;
+   border: 2px solid v.$primary200;
+
+   > svg {
+      max-height: 1em;
+   }
+
+   &:focus {
+      outline: 0;
+      /* Darken */
+      background: v.$primary300;
+   }
+
+   &:hover {
+      outline: 0;
+      /* Darken */
+      background: v.$primary300;
+   }
+
+   &:disabled {
+      cursor: default;
+      background-color: v.$gray100 !important;
+      color: v.$gray300 !important;
+      pointer-events: none;
+   }
+}
+
+@mixin button-hover-red {
+   @include button;
+   
+   &:hover {
+      background: v.$error;
+      border: 2px solid v.$error;
+   }
+}
+
+@mixin button2 {
+   @include button;
+   background: v.$white200;
+   color: v.$primary200;
+   border: 2px solid v.$primary200;
+
+   &:focus {
+      outline: 0;
+      /* Darken */
+      color: v.$primary100;
+      background: v.$gray100;
+      border: 2px solid v.$primary100;
+   }
+
+   &:hover {
+      outline: 0;
+      /* Darken */
+      color: v.$primary100;
+      background: v.$gray100;
+      border: 2px solid v.$primary100;
+   }
+}
+
+@mixin button-clearBg($color) {
+   color: v.$white;
+   background: transparent;
+   display: inline-block;
+   min-height: 1em;
+   border: none;
+   vertical-align: baseline;
+   font-family: v.$family;
+   font-weight: v.$weightXL;
+   line-height: 1em;
+   font-style: normal;
+   text-align: center;
+   text-decoration: none;
+   -webkit-user-select: none;
+   transition: all 0.1s ease;
+
+   &:focus {
+      outline: 0;
+      color: v.$gray100;
+   }
+
+   &:hover {
+      outline: 0;
+      color: v.$gray100;
+   }
+
+   @if $color == black {
+      color: v.$black200;
+      &:focus {
+         color: v.$gray400;
+      }
+      &:hover {
+         color: v.$gray400;
+      }
+   } @else if $color == 'primary' {
+      color: v.$primary200;
+      &:focus {
+         color: v.$primary100;
+      }
+      &:hover {
+         color: v.$primary100;
+      }
+   }
+}
+
+@mixin button-round {
+   border: solid 1px v.$primary200;
+   border-radius: 50%;
+   background-color: v.$white200;
+   color: v.$primary200;
+   font-weight: 700;
+   outline: 0;
+
+   &:focus {
+      outline: 0;
+      color: v.$primary100;
+      background: v.$gray100;
+      border: 1px solid v.$primary100;
+   }
+
+   &:hover {
+      outline: 0;
+      color: v.$primary100;
+      background: v.$gray100;
+      border: 1px solid v.$primary100;
+   }
+}
+
+@mixin modal-header {
+   grid-area: header;
+   display: grid;
+   align-items: center;
+   height: 60px;
+   padding: 0 16px;
+   border-bottom: v.$border125;
+
+   h1 {
+      color: v.$black200;
+      font-family: v.$family;
+      letter-spacing: 0;
+      line-height: 25px;
+      font-size: v.$sizeXL;
+      font-weight: v.$weightXL;
+      margin-bottom: 0;
+   }
+}
+
+@mixin modal-sidebar {
+   grid-area: sidebar;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   border-radius: 6px;
+   background-color: v.$gray200;
+
+   button {
+      height: 54px;
+      width: 100%;
+      border: none;
+      background: none;
+      color: v.$black200;
+      font-family: v.$family;
+      font-size: v.$sizeM;
+      font-weight: v.$weightM;
+      letter-spacing: 0;
+      line-height: 21px;
+      outline: none;
+      border-radius: 6px;
+
+      &:focus {
+         outline: none;
+      }
+      &:hover {
+         outline: none;
+         background-color: v.$gray100;
+      }
+   }
+}
+
+@mixin unit-tools {
+   display: none;
+   background-color: v.$white;
+   border-radius: v.$radius;
+   cursor: pointer;
+   border: 2px solid v.$primary200;
+
+   svg {
+      height: 1.25em !important;
+      width: 1.25em !important;
+      cursor: pointer;
+      vertical-align: -0.1em !important;
+      color: v.$primary200;
+
+      &:hover {
+         color: v.$secondary200;
+         path {
+            fill: v.$secondary200;
+         }
+      }
+   }
+
+   svg:nth-of-type(3) {
+      // meant for trashcan on tooltip
+      &:hover {
+         color: v.$error;
+         path {
+            fill: v.$error;
+         }
+      }
+   }
+}
