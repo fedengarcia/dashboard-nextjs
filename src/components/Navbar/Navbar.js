@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from "./navbarStyle.module.scss";
 
 const links = [{
         label: 'Home',
@@ -13,7 +14,8 @@ const links = [{
 
 export function Navbar () {
   
-    return<header>
+  return (
+    <header className={styles.headerContainer}>
         <ul>
             {links?.map(({label,route}) => (
             <li key={route}>
@@ -24,4 +26,5 @@ export function Navbar () {
             
         </ul>
   </header>
+  )
 }

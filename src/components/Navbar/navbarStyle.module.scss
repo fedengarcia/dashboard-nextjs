@@ -1,0 +1,38 @@
+@use "../../styles/variables" as v;
+@import "../../styles/mixins";
+
+
+.headerContainer {
+    // height: 285px;
+    height: auto;
+    width: 100%;
+    max-width: 95vw;
+    margin: 2em auto;
+    padding: 24px 20px;
+    border-radius: v.$radiusLower;
+    border: v.$border125;
+    background-color: v.$white100;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    ul{
+        display: flex;
+        li{
+            margin: 1em;
+            border-radius: v.$radiusMid;
+            padding: 1em;
+            background-color: v.$gray200;
+            text-decoration: none;
+            list-style: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            font-size: v.$sizeM;
+
+            &:hover{
+                cursor: pointer;
+                transition: all;
+                transform: scaleX(1);
+                background-color: v.$gray100;
+            }
+        }
+    }
+ }
