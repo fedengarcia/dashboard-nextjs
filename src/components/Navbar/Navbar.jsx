@@ -5,22 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet } from '@fortawesome/free-solid-svg-icons';
 
 
-const links = [{
-        label: 'Home',
-        route: '/'
-    },
-    {
-      label: 'Dashboard',
-      route: '/dashboard'
-    },
-    {
-      label: 'Post',
-      route: '/post'
-    }
-  
-  ]   
 
-export function Navbar () {
+export function Navbar ({links, wallet}) {
   
   const handleOnClick = () => {
     alert("wallet connect")
@@ -36,7 +22,7 @@ export function Navbar () {
             </li>
             ))}
         </ul>
-        <FontAwesomeIcon onClick={handleOnClick} icon={faWallet} size="1x"/>
+        {wallet && <FontAwesomeIcon onClick={handleOnClick} icon={faWallet} size="1x"/>}
   </div>
   )
 }
