@@ -37,8 +37,9 @@
             &:hover{
                 cursor: pointer;
                 transition: all;
+                color: white;
                 transform: scaleX(1);
-                background-color: v.$gray100;
+                background-color: #214f61;
             }
         }
     }
@@ -51,7 +52,7 @@
         margin-right: 2em;
         &:hover{
             cursor: pointer;
-            color: v.$gray300;
+            color: #214f61;
         }
         
     }
