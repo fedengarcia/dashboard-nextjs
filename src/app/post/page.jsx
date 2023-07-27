@@ -14,17 +14,17 @@ export default async function PostPage() {
   const posts = await fetchPosts();
 
   return (
-        <div className="page-layout">
-          {posts.slice(0,5).map(post => (
-          <article key={post.id}>
-              <Link href='/post/[id]' as={`/post/${post.id}`}>
-                  <h2>{post.title}</h2>
-                  <p>{post.body}</p>
-                  <LikeButton id={post.id}/>
-              </Link>
-            </article>
-                ))}
-        </div>
+    <>
+      {posts.slice(0,30).map(post => (
+        <article key={post.id} style={{display:'flex', alignItems:'center', justifyContent: 'space-between'}}>
+          <Link href='/post/[id]' as={`/post/${post.id}`}>
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+          </Link>
+          <LikeButton id={post.id}/>
+        </article>
+      ))}
+    </>        
   )
 }
 
