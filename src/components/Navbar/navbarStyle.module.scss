@@ -1,7 +1,6 @@
 @use "../../styles/variables" as v;
 @import "../../styles/mixins";
 
-
 .headerContainer {
     height: auto;
     width: 100%;
@@ -11,10 +10,13 @@
     border-radius: v.$radiusLower;
     border: v.$border125;
     background-color: v.$white100;
-    position: relative;
+    // position: relative;
     box-shadow: v.$shadow-all2;
     overflow-x: hidden;
-
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     ul{
         display: flex;
         li{
@@ -29,7 +31,7 @@
             & a{
                 width: 100%;
                 height: 100%;
-                display: block;
+                // display: block;
             }
 
             &:hover{
@@ -39,5 +41,18 @@
                 background-color: v.$gray100;
             }
         }
+    }
+
+
+    svg{
+        width: 2em;
+        height: 2em;
+        color: v.$gray400;
+        margin-right: 2em;
+        &:hover{
+            cursor: pointer;
+            color: v.$gray300;
+        }
+        
     }
  }

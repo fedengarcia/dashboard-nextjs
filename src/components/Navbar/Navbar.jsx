@@ -1,5 +1,9 @@
+'use client'
 import Link from 'next/link'
 import styles from "./navbarStyle.module.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWallet } from '@fortawesome/free-solid-svg-icons';
+
 
 const links = [{
         label: 'Home',
@@ -18,8 +22,12 @@ const links = [{
 
 export function Navbar () {
   
+  const handleOnClick = () => {
+    alert("wallet connect")
+  }
+
   return (
-    <header className={styles.headerContainer}>
+    <div className={styles.headerContainer}>
         <ul>
             {links?.map(({label,route}) => (
             <li key={route}>
@@ -27,8 +35,8 @@ export function Navbar () {
                 <Link href={route} >{label}</Link>
             </li>
             ))}
-            
         </ul>
-  </header>
+        <FontAwesomeIcon onClick={handleOnClick} icon={faWallet} size="1x"/>
+  </div>
   )
 }
